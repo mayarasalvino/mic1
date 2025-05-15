@@ -322,3 +322,32 @@ void binario(void* valor, int tipo){
 		} break;
 	}
 }
+emulador.h → protótipos e definições
+
+main.c → função main
+
+memoria.c → funções carregar_programa, operar_memoria
+
+ula.c → realizar_operacao_ALU, atribuir_barramento_*
+
+utils.c → binario(), exibir_processos
+
+
+
+	// melhorias
+if (MicroPrograma == NULL) {
+    fprintf(stderr, "Erro ao abrir microprog.rom\n");
+    exit(1);
+}
+typedef enum {
+    MDR_B = 0, PC_B, MBR_SINAL_B, MBR_ZERO_B,
+    SP_B, LV_B, CPP_B, TOS_B, OPC_B
+} Fonte_B;
+
+typedef enum {
+    LE_MEM = 0b010,
+    ESC_MEM = 0b100,
+    LE_MBR = 0b001
+} Memoria_Codificada;
+
+	
